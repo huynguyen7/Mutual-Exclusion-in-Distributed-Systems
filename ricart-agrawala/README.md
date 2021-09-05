@@ -8,13 +8,13 @@
 
 ## Distributed system's properties
 - Safety is guaranteed.
-- Liveness: In the worst case, the process needs to wait for N-1 other processes to finish their enter() actions and reply.
+- Liveness: In the worst case, the process needs to wait for N-1 other processes to finish their enter() actions to reply.
 - Ordering: Requests with lower Lamport timestamps are granted earlier.
 
 
 ## Performance analysis
 With N is the number of processes in the cluster.
-- Bandwith: O(N)
+- Bandwidth: O(N)
 - Client delay: O(1)
 - Synchronization delay: O(1)
 
