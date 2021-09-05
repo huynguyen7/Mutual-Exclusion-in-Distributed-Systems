@@ -39,4 +39,4 @@ $ ./run.sh
 
 ## Source
 - Cloud Computing Concepts (Part 2): [Click here](https://www.coursera.org/learn/cloud-computing-2/lecture/Fm2qB/2-1-introduction-and-basics)
-- More algorithms and explanation (can handle nodes failure): [Click here](https://www.cs.uic.edu/~ajayk/Chapter9.pdf)
+- More algorithms(can handle nodes failure) and explanation: [Click here](https://www.cs.uic.edu/~ajayk/Chapter9.pdf)
