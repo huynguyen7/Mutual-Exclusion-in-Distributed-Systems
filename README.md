@@ -1,7 +1,7 @@
 # MUTUAL EXCLUSION IN DISTRITBUTED SYSTEM
 This repository contains academia implementations for timestamps algorithms:
 - Ricart-Agrawala's Algorithm.
-- Maekawas Algorithm.
+- Maekawa's Algorithm.
 
 
 ## Summary

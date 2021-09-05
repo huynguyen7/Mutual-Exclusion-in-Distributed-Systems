@@ -95,6 +95,17 @@ def recv_request_msg(source=None, msg=None):
         unicast(REPLY_MSG, dest=source)
 
 
+def exit():
+    global state
+    # Change state to RELEASED and Reply to all queued MSGs.
+    state = RELEASED
+    local_queue_size = len(local_queue)
+    while local_queue_size != 0:
+        rank = local_queue.pop(0)
+        unicast(REPLY_MSG, dest=rank)
+        local_queue_size -= 1
+
+
 def enter(critical_section, *args):
     assert critical_section is not None
 
@@ -125,14 +136,7 @@ def enter(critical_section, *args):
     #print(f'[Process {my_ID}] {str(local_queue)}')
     
     # DONE Critical Section.
-    # Change state to RELEASED and Reply to all queued MSGs.
-    state = RELEASED
-    local_queue_size = len(local_queue)
-    while local_queue_size != 0:
-        rank = local_queue.pop(0)
-        unicast(REPLY_MSG, dest=rank)
-        local_queue_size -= 1
-
+    exit()
     return job_result
 
 ''' MAIN '''
