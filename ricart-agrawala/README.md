@@ -1,4 +1,5 @@
 # RICART-ALGRAWALA'S ALGORITHM
+## Summary
 - The key idea of the algorithm is: When the process wants to access the CS (Critical Section), it will send the request to all other processes in the cluster. When the number of replies of accepting message are sent back are equals to the number of processes in the group. It will have the access to the CS.
 - The algorithm use the Lamport timetamps for causal or logical timestamp.
 - The request message has the structure of a two-tuple <T_i, P_i> where T_i is the local timestamp of the process with ID P_i
