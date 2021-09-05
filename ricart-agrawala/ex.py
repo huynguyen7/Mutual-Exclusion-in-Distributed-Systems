@@ -113,7 +113,7 @@ def enter(critical_section, *args):
         #(_, recv_msg) = recv_any()
         if recv_msg[MSG] == REPLY_MSG:
             num_replies += 1
-        else:  # TODO, what if we have REQUEST_MSG ??
+        else:
             recv_request_msg(source, msg=recv_msg)
         #print(f'[Process {my_ID}] src:{group_IDs[source]} {str(recv_msg)} num_repl {num_replies}')
     num_replies = 0
