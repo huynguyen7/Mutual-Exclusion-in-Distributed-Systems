@@ -1,4 +1,4 @@
-from maekawa import maekawa_enter, wait_for_vote, my_rank
+from maekawa import maekawa_enter, wait_for_votes, my_rank
 
 
 """
