@@ -94,7 +94,7 @@ def recv_request_msg(source=None, msg=None):
         unicast(REPLY_MSG, dest=source)
 
 
-def exit():
+def ra_exit():  # Ricart-Agrawala's exit()
     global state
     # Change state to RELEASED and Reply to all queued MSGs.
     state = RELEASED
@@ -105,7 +105,7 @@ def exit():
         local_queue_size -= 1
 
 
-def enter(critical_section, *args):
+def ra_enter(critical_section, *args):  # Ricart-Agrawala's enter()
     assert critical_section is not None
 
     global state, local_counter, my_rank, my_ID, num_replies
@@ -135,7 +135,7 @@ def enter(critical_section, *args):
     #print(f'[Process {my_ID}] {str(local_queue)}')
     
     # DONE Critical Section.
-    exit()
+    ra_exit()
     return job_result
 
 ''' MAIN '''
@@ -149,12 +149,12 @@ def example():
         print('[Process %d] Exited critical section.' % my_ID)
 
     if my_ID == 80:
-        enter(critical_section)
+        ra_enter(critical_section)
     elif my_ID == 6:
         recv_request_msg()
         recv_request_msg()
     elif my_ID == 12:
-        enter(critical_section)
+        ra_enter(critical_section)
     elif my_ID == 3:
         recv_request_msg()
         recv_request_msg()
