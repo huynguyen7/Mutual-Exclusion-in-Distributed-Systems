@@ -1,12 +1,12 @@
-# MUTUAL EXCLUSION IN DISTRITBUTED SYSTEM
+# MUTUAL EXCLUSION IN DISTRIBUTED SYSTEM
 This repository contains academia implementations for timestamps algorithms:
-- Ricart-Agrawala's Algorithm.
-- Maekawa's Algorithm.
+- Ricart-Agrawala's Algorithm (Quorum-based).
+- Maekawa's Algorithm(Quorum-based).
 
 
 ## Summary
 - Unlike mutex in a shared memory (same OS), we can easily use a mutex (lock) object for Critical Section. In a distributed environment, we deal with mutual exclusion problem through nodes communications.
-- Mutual Exclusion problem in Distributed System are a complex problem and it is unsolvable in an fail-silent model (async system). Specifically, quorum-based algorithm is a more prefer choice for solving problem in async system.
+- Mutual Exclusion problem in Distributed System are a complex problem and it is unsolvable in an fail-silent model (async system). There are two basic approaches in solving the problem: Token-based algorithms and Quorum-based algorithms. Specifically, Quorum-based algorithms are a more prefer choice for solving problem in async system.
 
 
 ## System model

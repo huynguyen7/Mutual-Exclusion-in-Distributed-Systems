@@ -1,5 +1,4 @@
 from mpi4py import MPI
-from time import sleep
 
 
 """
@@ -143,6 +142,7 @@ def enter(critical_section, *args):
 def example():
 
     # Critical section for testing.
+    from time import sleep
     def critical_section():
         print('[Process %d] Entered critical section.' % my_ID)
         sleep(1)
