@@ -31,6 +31,8 @@ def recv_any():  # Receive msg in a standard blocking way.
 
 
 def init_voting_set(size):
+    assert size % 2 == 0, '[Error] We need an even number of processes for this algorithm.'
+    
     voting_set = set()
     # Creating 2D Cartesian grid for graph topology.
     dims = MPI.Compute_dims(size, 2)  # Uniformly partition to 2D Cart grid.
